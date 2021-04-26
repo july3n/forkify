@@ -1,6 +1,6 @@
 # :fork_and_knife: Forkify
 
-Live Version --> [Forkify](https://forkify-murat.netlify.app/)
+## Live Version --> [Forkify](https://forkify-murat.netlify.app/)
 
 - Recipe application with custom recipe uploads
 - Forkify laverage features like food searching from wide varieties and access to give exact raw materials required to cook a food.
