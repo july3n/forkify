@@ -10,12 +10,6 @@ import addRecipeView from './views/addRecipeView';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// https://forkify-api.herokuapp.com/v2
-
-/* if (module.hot) {
-  module.hot.accept();
-}
- */
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1); // Taking the recipe id
@@ -50,7 +44,6 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // Render results
-    //  resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
 
     // Render initial pagination buttons
@@ -110,11 +103,11 @@ const controlAddRecipe = async function (newRecipe) {
     bookmarksView.render(model.state.bookmarks);
 
     // change ID in URL
-    window.history.pushState(null,'',`#${model.state.recipe.id}`)
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
 
     // Close form window
     setTimeout(function () {
-     addRecipeView.toggleWindow();
+      addRecipeView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error('🎈,', err);
